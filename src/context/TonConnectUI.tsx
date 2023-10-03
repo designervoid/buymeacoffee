@@ -123,6 +123,14 @@ export function useTonConnectedWallet() {
             }
           }
         );
+
+        tonConnectUI.connectionRestored.then(restored => {
+          if (restored) {
+            setConnectedWallet(true);
+          } else {
+            alert('Connection was not restored.');
+          }
+      });
   
         return unsubscribe;
       }
