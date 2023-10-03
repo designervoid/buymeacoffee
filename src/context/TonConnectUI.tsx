@@ -134,7 +134,7 @@ export function useTonConnectedWallet() {
           if (restored) {
             setConnectedWallet(true);
           } else {
-            alert('Connection was not restored.');
+            console.error('Connection was not restored.');
           }
       });
   
