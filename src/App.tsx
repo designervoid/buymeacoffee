@@ -104,11 +104,11 @@ function App() {
   })
 
   return (
-    <div class="bg-bg-gray min-h-screen p-4 w-screen flex flex-col items-center justify-center">
+    <div class="bg-gray min-h-screen p-4 w-screen flex flex-col items-center justify-center">
       <div class="flex flex-col items-center w-full">
         <TonConnectButton />
       </div>
-      {connectedWallet() && <div class="flex flex-col items-center mb-4 w-full">
+      {connectedWallet() ? <div class="flex flex-col items-center mb-4 w-full">
         <TGSPlayer tgsPath="/lottie/Coffee.tgs" className="mb-2 w-20 h-20" />
         <input
             value={donationAmount()}
@@ -119,11 +119,16 @@ function App() {
         />
         <button
           onClick={donate}
-          class="bg-gradient-to-r from-gradient-left to-gradient-right text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out hover:bg-main-blue active:bg-main-blue focus:outline-none disabled:bg-gray"
+          class="bg-main-gradient text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out hover:bg-main-blue active:bg-main-blue focus:outline-none disabled:bg-gray"
         >
           Donate on a coffee
         </button>
-      </div>}
+      </div> : <span class="mt-4 text-black text-lg">
+          To buy coffee for 
+          <a href="https://t.me/designervoid" class="text-main-blue font-bold hover:underline">@designervoid</a>, 
+          you need to connect a wallet.
+      </span>
+      }
     </div>
   )
 }

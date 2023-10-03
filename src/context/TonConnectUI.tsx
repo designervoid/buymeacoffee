@@ -49,7 +49,7 @@ async function postData(url = "", data = {}) {
   }
   
 export function useTonConnectedWallet() {
-    const [connectedWallet, setConnectedWallet] = createSignal<boolean>(localStorage.getItem('dAppToken') ? true : false);
+    const [connectedWallet, setConnectedWallet] = createSignal<boolean>(false);
     const [tonConnectUI] = useTonConnectUI();
   
     onMount(() => {
@@ -114,12 +114,10 @@ export function useTonConnectedWallet() {
                   });
   
                   setConnectedWallet(true);
-                  localStorage.setItem('dAppToken', `Bearer ${token}`);
                 } catch (err) {
                   console.error(err);
                   
                   setConnectedWallet(false);
-                  localStorage.removeItem('dAppToken');
                 }
               }
             }

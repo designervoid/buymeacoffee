@@ -7,11 +7,14 @@ module.exports = {
     extend: {
       colors: {
         'main-blue': '#0098EA',
-        'bg-gray': '#F7F9FB',
-        'bg-black': '#232328',
+        'gray': '#F7F9FB',
+        'black': '#232328',
         'gradient-left': '#2D83EC',
         'gradient-right': '#1AC9FF',
-      }
+      },
+      backgroundImage: theme => ({
+         'main-gradient': 'linear-gradient(to right, #2D83EC, #1AC9FF)',
+      })
     }
   },
   plugins: [],
