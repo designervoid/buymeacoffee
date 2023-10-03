@@ -4,6 +4,7 @@ import pako from 'pako';
 
 type ITGSPlayer = {
   tgsPath: string;
+  className?: string;
 }
 
 export function TGSPlayer(props: ITGSPlayer) {
@@ -63,8 +64,8 @@ export function TGSPlayer(props: ITGSPlayer) {
 
   return (
     <div
-      style={{ height: '40px', width: '40px' }}
       ref={container}
+      class={props.className}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     ></div>

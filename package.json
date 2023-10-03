@@ -9,14 +9,22 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@solid-primitives/graphql": "^2.0.1",
     "@solidjs/router": "^0.8.3",
     "@tonconnect/ui": "2.0.0-beta.2",
     "@types/pako": "^2.0.1",
+    "buffer": "^6.0.3",
+    "graphql-request": "^6.1.0",
     "lottie-web": "^5.12.2",
     "pako": "^2.1.0",
-    "solid-js": "^1.7.8"
+    "solid-js": "^1.7.8",
+    "ton-core": "^0.52.0",
+    "vite-plugin-node-polyfills": "^0.15.0"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.3",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
     "vite-plugin-solid": "^2.7.0"
