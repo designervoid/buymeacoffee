@@ -125,6 +125,12 @@ export function useTonConnectedWallet() {
         );
 
         tonConnectUI.connectionRestored.then(restored => {
+          if (tonConnectUI.connected) {
+            setConnectedWallet(true);
+
+            return;
+          }
+
           if (restored) {
             setConnectedWallet(true);
           } else {
