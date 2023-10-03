@@ -73,7 +73,7 @@ function App() {
 
     if (walletDonateRawReaded && donationAmountReaded) {
       const template = 
-        `${walletDonateRawReaded?.account_states[0].parsed_nft_owner_address_workchain}:${walletDonateRawReaded?.account_states[0].parsed_nft_owner_address_address}`; // excepted designervoid.t.me, but will show doge-jetton.t.me
+        `${walletDonateRawReaded?.account_states[0].parsed_nft_owner_address_workchain}:${walletDonateRawReaded?.account_states[0].parsed_nft_owner_address_address}`; // excepted designervoid.t.me, but will show dogejetton.t.me
 
       const nanoAmount = (new Coins(donationAmountReaded).toNano());
 
@@ -81,7 +81,7 @@ function App() {
         validUntil: Math.floor(Date.now() / 1000) + 60, // 60 sec
         messages: [
           {
-              address: template, // destination address will be doge-jetton.t.me in @wallet bot
+              address: template, // destination address will be dogejetton.t.me in @wallet bot
               amount: nanoAmount, // toncoin in nanotons
           }
         ]
