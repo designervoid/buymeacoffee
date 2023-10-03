@@ -5,9 +5,6 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
-  '@solid-primitives/graphql':
-    specifier: ^2.0.1
-    version: 2.0.1(@graphql-typed-document-node/core@3.2.0)(graphql@16.8.1)(solid-js@1.7.8)
   '@solidjs/router':
     specifier: ^0.8.3
     version: 0.8.3(solid-js@1.7.8)
@@ -651,27 +648,6 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.15.0
     dev: true
-
-  /@solid-primitives/graphql@2.0.1(@graphql-typed-document-node/core@3.2.0)(graphql@16.8.1)(solid-js@1.7.8):
-    resolution: {integrity: sha512-wrSnZQFmM+rv233h07XRKZmJEtvabTzKGxa7UIKudyA7mZNIctVRc0cZdcqHvzkOCHLGrlLuYn5qlfTwehrPVg==}
-    peerDependencies:
-      '@graphql-typed-document-node/core': ^3.2.0
-      graphql: ^16.6.0
-      solid-js: ^1.6.12
-    dependencies:
-      '@graphql-typed-document-node/core': 3.2.0(graphql@16.8.1)
-      '@solid-primitives/utils': 6.2.1(solid-js@1.7.8)
-      graphql: 16.8.1
-      solid-js: 1.7.8
-    dev: false
-
-  /@solid-primitives/utils@6.2.1(solid-js@1.7.8):
-    resolution: {integrity: sha512-TsecNzxiO5bLfzqb4OOuzfUmdOROcssuGqgh5rXMMaasoFZ3GoveUgdY1wcf17frMJM7kCNGNuK34EjErneZkg==}
-    peerDependencies:
-      solid-js: ^1.6.12
-    dependencies:
-      solid-js: 1.7.8
-    dev: false
 
   /@solidjs/router@0.8.3(solid-js@1.7.8):
     resolution: {integrity: sha512-oJuqQo10rVTiQYhe1qXIG1NyZIZ2YOwHnlLc8Xx+g/iJhFCJo1saLOIrD/Dkh2fpIaIny5ZMkz1cYYqoTYGJbg==}
