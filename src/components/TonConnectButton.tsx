@@ -7,7 +7,7 @@ const TonConnectButton = ({ className, style }: any) => {
     const [_, setOptions] = useTonConnectUI();
 
     onMount(() => {
-        setOptions({ buttonRootId, actionsConfiguration: { twaReturnUrl: 'https://t.me/buymeacoffee_on_ton_bot' } });
+        setOptions({ buttonRootId, actionsConfiguration: { twaReturnUrl: 'https://t.me/buymeacoffee_on_ton_bot/connect' } });
         return () => setOptions({ buttonRootId: null });
     });
 
