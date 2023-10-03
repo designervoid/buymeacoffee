@@ -1,5 +1,5 @@
 {
-  "name": "solidjs-tonconnect2.0",
+  "name": "buymeacoffee",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -13,13 +13,11 @@
     "@solidjs/router": "^0.8.3",
     "@tonconnect/ui": "2.0.0-beta.2",
     "@types/pako": "^2.0.1",
-    "buffer": "^6.0.3",
     "graphql-request": "^6.1.0",
     "lottie-web": "^5.12.2",
     "pako": "^2.1.0",
     "solid-js": "^1.7.8",
-    "ton-core": "^0.52.0",
-    "vite-plugin-node-polyfills": "^0.15.0"
+    "ton3-core": "^1.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
