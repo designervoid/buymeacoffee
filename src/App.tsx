@@ -123,7 +123,7 @@ function App() {
         >
           Donate on a coffee
         </button>
-      </div> : <span class="mt-4 text-black text-lg">
+      </div> : <span class="mt-4 text-black text-lg text-center">
           To buy coffee for 
           <a href="https://t.me/designervoid" class="text-main-blue font-bold hover:underline">@designervoid</a>, 
           you need to connect a wallet.
