@@ -7,6 +7,10 @@ import { createSignal, onMount } from 'solid-js';
 import { request, gql } from 'graphql-request'
 import { Coins } from 'ton3-core';
 
+import WebApp from '@twa-dev/sdk';
+
+WebApp.ready();
+
 const endpoint = 'https://dton.io/graphql/'
 
 const query = gql`
@@ -96,6 +100,8 @@ function App() {
   };
 
   onMount(() => {
+    WebApp.expand();
+
     const run = async () => {
       const t = await request<TelegramUsernameNftAccountStates>(endpoint, query);
       setWalletDonateRaw(t);
