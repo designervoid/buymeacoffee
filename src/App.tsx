@@ -122,7 +122,6 @@ function App() {
             class="mb-2 text-center text-black px-4 py-2 border border-main-blue rounded-full"
             placeholder="Enter amount (TON)"
             type="number" step="0.001"
-            inputMode="decimal"
         />
         <button
           onClick={donate}
