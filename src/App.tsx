@@ -13,7 +13,7 @@ WebApp.ready();
 
 const endpoint = 'https://dton.io/graphql/'
 
-const queryNftData = gql`
+const query = gql`
   query data {
     account_states(
       account_state_state_init_code_method_name: "get_nft_data"
@@ -35,7 +35,7 @@ const queryNftData = gql`
       lt
     }
   }
-`;
+`
 
 export interface TelegramUsernameNft {
   nft_address:                        string;
@@ -72,19 +72,16 @@ function App() {
     }
 
     if (walletDonateRawReaded && donationAmountReaded) {
-      const rawAddressTemplate = 
+      const template = 
         `${walletDonateRawReaded?.account_states[0].parsed_nft_owner_address_workchain}:${walletDonateRawReaded?.account_states[0].parsed_nft_owner_address_address}`; // excepted designervoid.t.me, but will show dogejetton.t.me
-        
 
-      const replacedValue = donationAmountReaded.replace(',', '.');
-
-      const nanoAmount = (new Coins(replacedValue).toNano());
+      const nanoAmount = (new Coins(donationAmountReaded).toNano());
 
       const tx = {
         validUntil: Math.floor(Date.now() / 1000) + 60, // 60 sec
         messages: [
           {
-              address: rawAddressTemplate, // destination address will be dogejetton.t.me in @wallet bot
+              address: template, // destination address will be dogejetton.t.me in @wallet bot
               amount: nanoAmount, // toncoin in nanotons
           }
         ]
@@ -106,8 +103,8 @@ function App() {
     WebApp.expand();
 
     const run = async () => {
-      const t1 = await request<TelegramUsernameNftAccountStates>(endpoint, queryNftData);
-      setWalletDonateRaw(t1);
+      const t = await request<TelegramUsernameNftAccountStates>(endpoint, query);
+      setWalletDonateRaw(t);
     }
     run();
   })
@@ -124,7 +121,7 @@ function App() {
             onChange={handleInput}
             class="mb-2 text-center text-black px-4 py-2 border border-main-blue rounded-full"
             placeholder="Enter amount (TON)"
-            type="number" step="0,001"
+            type="number" step="0.001"
             inputMode="decimal"
         />
         <button
