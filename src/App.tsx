@@ -55,7 +55,7 @@ export interface TelegramUsernameNftAccountStates {
 };
 
 function App() {
-  const { wallet } = useTonConnectedWallet();
+  const { wallet, restored } = useTonConnectedWallet();
   const [tonConnectUI] = useTonConnectUI();
 
   const [walletDonateRaw, setWalletDonateRaw] = createSignal<undefined | TelegramUsernameNftAccountStates>(undefined);
@@ -114,8 +114,8 @@ function App() {
       <div class="flex flex-col items-center w-full">
         <TonConnectButton />
       </div>
-      <TGSPlayer tgsPath="/lottie/Coffee.tgs" className="mb-2 w-20 h-20" />
-      {wallet() ? <div class="flex flex-col items-center mb-4 w-full">
+      <TGSPlayer tgsPath="/lottie/Coffee.tgs" className="w-20 h-20" />
+      {(restored() && (wallet() !== null ? <div class="flex flex-col items-center mb-4 w-full">
         <input
             value={donationAmount()}
             onChange={handleInput}
@@ -133,8 +133,7 @@ function App() {
           To buy coffee for 
           <a href="https://t.me/designervoid" class="text-main-blue font-bold hover:underline">@designervoid</a>, 
           you need to connect a wallet.
-      </span>
-      }
+      </span>))}
     </div>
   )
 }

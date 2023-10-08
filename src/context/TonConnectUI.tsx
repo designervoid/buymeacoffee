@@ -42,12 +42,15 @@ export function useTonConnectUI(): [TonConnectUI, (options: TonConnectUiOptions)
 export function useTonConnectedWallet() {
     const [tonConnectUI] = useTonConnectUI();
     const [wallet, setWallet] = createSignal<Wallet | (Wallet & WalletInfoWithOpenMethod) | null>(
-      tonConnectUI?.wallet || null
+      null
     );
+    const [restored, setRestored] = createSignal(false);
   
     onMount(() => {
       const run = async () => {
         if (tonConnectUI) {
+          tonConnectUI.connectionRestored.then(() => setRestored(true));
+
           return tonConnectUI.onStatusChange(wallet => {
             setWallet(wallet);
           });
@@ -57,7 +60,7 @@ export function useTonConnectedWallet() {
       run();
     });
 
-    return { wallet };
+    return { wallet, restored };
 }
 
 // (react realisation)[https://github.com/ton-connect/sdk/blob/main/packages/ui-react/src/components/TonConnectUIProvider.tsx]
