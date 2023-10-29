@@ -54,15 +54,15 @@ export interface TelegramUsernameNftAccountStates {
   account_states: [TelegramUsernameNft];
 };
 
+const address = 'EQCy_jkW-aeL88vemIpoefVf_8-hTSg_CQ6wpZifdJdDUZR-';
+
 function App() {
   const { wallet, restored } = useTonConnectedWallet();
   const [tonConnectUI] = useTonConnectUI();
 
-  const [walletDonateRaw, setWalletDonateRaw] = createSignal<undefined | TelegramUsernameNftAccountStates>(undefined);
   const [donationAmount, setDonationAmount] = createSignal<undefined | string>(undefined);
 
-  const donate = () => {
-    const walletDonateRawReaded = walletDonateRaw();
+  const donate = async () => {
     const donationAmountReaded = donationAmount();
 
     if (Number(donationAmountReaded) <= 0) {
@@ -71,23 +71,24 @@ function App() {
       return;
     }
 
-    if (walletDonateRawReaded && donationAmountReaded) {
-      const template = 
-        `${walletDonateRawReaded?.account_states[0].parsed_nft_owner_address_workchain}:${walletDonateRawReaded?.account_states[0].parsed_nft_owner_address_address}`; // excepted designervoid.t.me, but will show dogejetton.t.me
-
+    if (donationAmountReaded) {
       const nanoAmount = (new Coins(donationAmountReaded).toNano());
 
       const tx = {
         validUntil: Math.floor(Date.now() / 1000) + 60, // 60 sec
         messages: [
           {
-              address: template, // destination address will be dogejetton.t.me in @wallet bot
+              address, // destination address will be dogejetton.t.me in @wallet bot
               amount: nanoAmount, // toncoin in nanotons
           }
         ]
       };
 
-      tonConnectUI.sendTransaction(tx)
+      try {
+        await tonConnectUI.sendTransaction(tx);
+      } catch (err) {
+        console.error(err);
+      }
     }
   }
 
@@ -101,12 +102,6 @@ function App() {
 
   onMount(() => {
     WebApp.expand();
-
-    const run = async () => {
-      const t = await request<TelegramUsernameNftAccountStates>(endpoint, query);
-      setWalletDonateRaw(t);
-    }
-    run();
   })
 
   return (

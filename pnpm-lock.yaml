@@ -9,8 +9,8 @@ dependencies:
     specifier: ^0.8.3
     version: 0.8.3(solid-js@1.7.8)
   '@tonconnect/ui':
-    specifier: 2.0.0-beta.2
-    version: 2.0.0-beta.2
+    specifier: 2.0.0-beta.4
+    version: 2.0.0-beta.4
   '@twa-dev/sdk':
     specifier: ^6.9.0
     version: 6.9.0(react@18.2.0)
@@ -688,8 +688,8 @@ packages:
       - encoding
     dev: false
 
-  /@tonconnect/ui@2.0.0-beta.2:
-    resolution: {integrity: sha512-oVaJ/o8+inYNDA4Jq1WbZm8mdexyW+FjSBnYKQhqneH883HeLpiIA63dmbIWMiHAbkY8S6uRO9ffKPUjEWzGjw==}
+  /@tonconnect/ui@2.0.0-beta.4:
+    resolution: {integrity: sha512-bE3zF34yvjrNkNyulwWZHACSXqo0M5eYdslZM54/miTr5tOFJEhUofv/sgbWHNdD78MHrPPOcoXQxoKkaiFZ+Q==}
     dependencies:
       '@tonconnect/sdk': 3.0.0-beta.1
       classnames: 2.3.2
