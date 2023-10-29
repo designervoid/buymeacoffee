@@ -4,38 +4,11 @@ import { useTonConnectUI, useTonConnectedWallet } from './context/TonConnectUI';
 import { TGSPlayer } from './components/TGSPlayer';
 
 import { createSignal, onMount } from 'solid-js';
-import { request, gql } from 'graphql-request'
 import { Coins } from 'ton3-core';
 
 import WebApp from '@twa-dev/sdk';
 
 WebApp.ready();
-
-const endpoint = 'https://dton.io/graphql/'
-
-const query = gql`
-  query data {
-    account_states(
-      account_state_state_init_code_method_name: "get_nft_data"
-      parsed_nft_content_offchain_url: "https://nft.fragment.com/username/designervoid.json",
-    ) {
-      nft_address: address
-      nft_workchain: workchain
-      nft_index: parsed_nft_index
-      
-      collection_address: parsed_nft_collection_address_address
-      collection_workchain: parsed_nft_collection_address_workchain
-      
-      parsed_nft_owner_address_workchain
-      parsed_nft_owner_address_address
-      
-      parsed_nft_content_storage_type
-      parsed_nft_content_offchain_url: parsed_nft_content_offchain_url
-      
-      lt
-    }
-  }
-`
 
 export interface TelegramUsernameNft {
   nft_address:                        string;

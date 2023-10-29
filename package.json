@@ -13,7 +13,6 @@
     "@tonconnect/ui": "2.0.0-beta.4",
     "@twa-dev/sdk": "^6.9.0",
     "@types/pako": "^2.0.1",
-    "graphql-request": "^6.1.0",
     "lottie-web": "^5.12.2",
     "pako": "^2.1.0",
     "solid-js": "^1.7.8",
