@@ -9,8 +9,8 @@ dependencies:
     specifier: ^0.8.3
     version: 0.8.3(solid-js@1.7.8)
   '@tonconnect/ui':
-    specifier: 2.0.0-beta.4
-    version: 2.0.0-beta.4
+    specifier: 2.0.0-beta.5
+    version: 2.0.0-beta.5
   '@twa-dev/sdk':
     specifier: ^6.9.0
     version: 6.9.0(react@18.2.0)
@@ -646,8 +646,8 @@ packages:
       solid-js: 1.7.8
     dev: false
 
-  /@tonconnect/isomorphic-eventsource@0.0.1:
-    resolution: {integrity: sha512-ODk48pMlqLSOvu3fM0R1sdlz/Cv2y4hSfwtXmLq9ky9+H7ZQfw/16ElpIJ69B4lUvHycxrueNgrRtF9PJHoGMw==}
+  /@tonconnect/isomorphic-eventsource@0.0.2-beta.0:
+    resolution: {integrity: sha512-KeXr2LA04p5OE5Zbttc8W/mwublzAGYymqA9yRTF7BRoR76tPV/6j73kRtDlGloLHxtQ/2ygvbniGF4NIxH9Vw==}
     dependencies:
       eventsource: 2.0.2
     dev: false
@@ -660,27 +660,27 @@ packages:
       - encoding
     dev: false
 
-  /@tonconnect/protocol@2.2.5:
-    resolution: {integrity: sha512-kR0E+CWZl6JrE/30283v+sRiAvEu21t1xOLFx6f/BxlCNLY2wki39+L32+iicX8gn/Ig99L1flr9TAI9QW9bnQ==}
+  /@tonconnect/protocol@2.2.6-beta.0:
+    resolution: {integrity: sha512-vNSD4mPBGRb5QTWhpzcNUtnLSlJ4+L7plQSbeznQpwYusTMYKJA3/TSCDANPuXPSCSk3gU7mR05/VCiAKT8Cmg==}
     dependencies:
       tweetnacl: 1.0.3
       tweetnacl-util: 0.15.1
     dev: false
 
-  /@tonconnect/sdk@3.0.0-beta.1:
-    resolution: {integrity: sha512-YcTO3USLNblaB+ClPFcQ8LwR68GaZ78kFbxBLANi6tvRORP0d0aSSjTODRs0lDOfVN0gkLCwo+7JxrRBoF/20w==}
+  /@tonconnect/sdk@3.0.0-beta.2:
+    resolution: {integrity: sha512-+cFiDeYhPvXyxw+MtZVZ1Qu559PKPg8j0ofuR6H60P3CLZo9NDWyEFEzoSX+JZBxfq7LSUwO4DjcrBEppgOYZA==}
     dependencies:
-      '@tonconnect/isomorphic-eventsource': 0.0.1
+      '@tonconnect/isomorphic-eventsource': 0.0.2-beta.0
       '@tonconnect/isomorphic-fetch': 0.0.2
-      '@tonconnect/protocol': 2.2.5
+      '@tonconnect/protocol': 2.2.6-beta.0
     transitivePeerDependencies:
       - encoding
     dev: false
 
-  /@tonconnect/ui@2.0.0-beta.4:
-    resolution: {integrity: sha512-bE3zF34yvjrNkNyulwWZHACSXqo0M5eYdslZM54/miTr5tOFJEhUofv/sgbWHNdD78MHrPPOcoXQxoKkaiFZ+Q==}
+  /@tonconnect/ui@2.0.0-beta.5:
+    resolution: {integrity: sha512-prCEpwbV0g4vedQdPL25Za6aHnyrKneWFaPQ9jCpcK2kaV4iTfce5vwX1I9CwoQR5A+LFUgYwo2MTfYTqNHLJQ==}
     dependencies:
-      '@tonconnect/sdk': 3.0.0-beta.1
+      '@tonconnect/sdk': 3.0.0-beta.2
       classnames: 2.3.2
       deepmerge: 4.3.1
       ua-parser-js: 1.0.36
