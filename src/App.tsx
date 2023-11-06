@@ -10,23 +10,6 @@ import WebApp from '@twa-dev/sdk';
 
 WebApp.ready();
 
-export interface TelegramUsernameNft {
-  nft_address:                        string;
-  nft_workchain:                      number;
-  nft_index:                          string;
-  collection_address:                 string;
-  collection_workchain:               number;
-  parsed_nft_owner_address_workchain: number;
-  parsed_nft_owner_address_address:   string;
-  parsed_nft_content_storage_type:    string;
-  parsed_nft_content_offchain_url:    string;
-  lt:                                 number;
-}
-
-export interface TelegramUsernameNftAccountStates {
-  account_states: [TelegramUsernameNft];
-};
-
 const address = 'EQCy_jkW-aeL88vemIpoefVf_8-hTSg_CQ6wpZifdJdDUZR-';
 
 function App() {
